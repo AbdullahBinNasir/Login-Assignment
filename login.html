@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="Name">Name</label>
+    <input type="text" id="name">
+    <br>
+    <label for="Password" >Password</label>
+    <input type="password" name="" id="password">
+    <br>
+    <input type="submit" onclick="login()" value="login">
+
+    <script>
+        var user1 = {
+                "Name" : "Abdullah",
+                "Password" : "Nasir"
+        }
+
+        function login(){
+
+
+
+        let user_input_name = document.getElementById("name").value
+        console.log(user_input_name)
+
+       let user_input_password = document.getElementById("password").value
+       console.log(user_input_password)
+
+       var uname1 = JSON.stringify(user1)  
+       
+       localStorage.setItem("uname1", uname1)
+       console.log(localStorage.getItem("uname1"))
+     
+       var uname2 = JSON.parse(localStorage.getItem("uname2"))
+
+            console.log(uname2.Password)
+
+       if(user_input_name == "" && user_input_password == ""){
+     alert("Please Enter All Fields")
+    }else{
+     alert("You Have Successfully Logged In")
+    }
+
+    }
+        
+
+        
+
+        // for (verify in a){
+
+
+
+        //     document.write(verify + ":")
+        //     document.write(a[verify] + "<br/>")
+            
+        //     }
+        
+    </script>
+
+</body>
+</html>
